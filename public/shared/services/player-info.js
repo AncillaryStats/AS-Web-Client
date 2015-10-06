@@ -22,7 +22,7 @@
       if (instance.players.length) {
         def.resolve();
       } else {
-        $http.get('https://www.sports-stats-pro.herokuapp.com/players')
+        $http.get('sports-stats-pro.herokuapp.com/players')
         .then(function(res) {
           instance.players = res.data;
           def.resolve();
