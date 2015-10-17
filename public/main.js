@@ -10,10 +10,15 @@
 
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/leader-tables');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
 
+    .state('home', {
+      url: '/',
+        templateUrl: 'home/home.html',
+        controller: 'HomeCtrl as home'
+    })
     .state('leader-tables', {
       url: '/leader-tables',
         templateUrl: 'leader-tables/leader-tables.html',
