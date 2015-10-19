@@ -5,7 +5,8 @@
   angular.module('SportsStats', [
     'ui.router',
     'ui.bootstrap',
-    'ngTagsInput'
+    'ngTagsInput',
+    'ngSanitize'
     ])
 
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

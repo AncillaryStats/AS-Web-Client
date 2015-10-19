@@ -10,6 +10,9 @@
 
   function NavCtrl($http, $q, $scope, PlayerInfo, $state) {
 
+    // Loads player names for search
+    PlayerInfo.get();
+
     // Search players by name
     $scope.getPlayers = function($query) {
       var def = $q.defer()
