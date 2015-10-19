@@ -1,3 +1,24 @@
-<h2>Welcome to AncillaryStats</h2>
+<div class="col-md-9">
+  <h2>Welcome to AncillaryStats</h2>
+  <br>
+  <p>AncillaryStats is an ongoing project to allow users to play with updated NFL player and team data. In-progress features include a player comparison graph, leader tables, trending players, and individual player pages. Check back soon for updates!</p>
+</div>
 
-<p>AncillaryStats is an ongoing project to allow users to play with updated NFL player and team data. In-progress features include a player comparison graph, leader tables, trending players, and individual player pages. Check back soon for updates!</p>
+<div class="col-md-3 table-column trending-table">
+  <div class="panel panel-default">
+     <table class="table table-hover">
+      <tbody>
+        <thead>
+          <tr>
+            <th colspan="2" class="table-header">Trending Players</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="player in trending">
+          <td>{{ $index + 1 }}.</td>
+          <td style="padding-left: 1em;">{{ player.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
