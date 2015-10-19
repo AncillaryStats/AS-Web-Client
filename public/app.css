@@ -481,6 +481,10 @@ th {
   display: inline;
 }
 
+.player-stats {
+  margin-top: 2em;
+}
+
 /* Home View */
 
 .trending-table {
