@@ -4,9 +4,9 @@
     .module('SportsStats')
     .factory('PositionStats', PositionStats);
 
-  PositionStats.$inject = ['$http', '$q'];
+  PositionStats.$inject = ['$http', '$q', 'EnvConfig'];
 
-  function PositionStats($http, $q){
+  function PositionStats($http, $q, EnvConfig){
 
     var instance = {
 
@@ -29,7 +29,8 @@
       if (instance.QB.length) {
         def.resolve()
       } else {
-        $http.get('http://sports-stats-pro.herokuapp.com/games/qbs')
+        // $http.get('http://sports-stats-pro.herokuapp.com/games/qbs')
+        $http.get(EnvConfig.api + '/games/qbs')
         .then(function(res) {
           instance.QB = res.data;
           def.resolve();
@@ -47,6 +48,7 @@
         def.resolve()
       } else {
         $http.get('http://sports-stats-pro.herokuapp.com/games/rbs')
+        // $http.get(EnvConfig.api + '/games/rbs')
         .then(function(res) {
           instance.RB = res.data;
           def.resolve();
@@ -63,7 +65,8 @@
       if (instance.WR.length) {
         def.resolve()
       } else {
-        $http.get('http://sports-stats-pro.herokuapp.com/games/wrs')
+        // $http.get('http://sports-stats-pro.herokuapp.com/games/wrs')
+        $http.get(EnvConfig.api + '/games/wrs')
         .then(function(res) {
           instance.WR = res.data;
           def.resolve();
@@ -80,7 +83,8 @@
       if (instance.TE.length) {
         def.resolve();
       } else {
-        $http.get('http://sports-stats-pro.herokuapp.com/games/tes')
+        // $http.get('http://sports-stats-pro.herokuapp.com/games/tes')
+        $http.get(EnvConfig.api + '/games/tes')
         .then(function(res) {
           instance.TE = res.data;
           def.resolve();
@@ -96,7 +100,7 @@
         getQbGames(),
         getRbGames(),
         getWrGames(),
-        getTeGames() 
+        getTeGames()
       ])
     }
 

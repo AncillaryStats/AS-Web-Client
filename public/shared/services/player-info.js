@@ -4,9 +4,9 @@
     .module('SportsStats')
     .factory('PlayerInfo', PlayerInfo);
 
-  PlayerInfo.$inject = ['$http', '$q'];
+  PlayerInfo.$inject = ['$http', '$q', 'EnvConfig'];
 
-  function PlayerInfo($http, $q){
+  function PlayerInfo($http, $q, EnvConfig){
 
     var instance = {
       get: get,
@@ -22,7 +22,8 @@
       if (instance.players.length) {
         def.resolve();
       } else {
-        $http.get('http://sports-stats-pro.herokuapp.com/players')
+        // $http.get('http://sports-stats-pro.herokuapp.com/players')
+        $http.get(EnvConfig.api + '/players')
         .then(function(res) {
           instance.players = res.data;
           def.resolve();
