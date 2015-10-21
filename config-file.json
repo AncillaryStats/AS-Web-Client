@@ -1,0 +1,12 @@
+{
+  "local": {
+    "EnvConfig": {
+      "api": "http://localhost:5000/api"
+    }
+  },
+  "production": {
+    "EnvConfig": {
+      "api": "'http://sports-stats-pro.herokuapp.com/"
+    }
+  }
+}
