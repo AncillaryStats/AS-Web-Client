@@ -10,8 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3",
     "bower": "^1.5.3",
+    "express": "^4.13.3",
+    "gulp-ng-config": "^1.2.1",
     "newrelic": "^1.22.2"
   },
   "devDependencies": {

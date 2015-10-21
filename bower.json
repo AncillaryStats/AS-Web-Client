@@ -17,6 +17,7 @@
     "angular": "~1.4.7",
     "angular-ui-router": "~0.2.15",
     "ng-tags-input": "~3.0.0",
-    "angular-sanitize": "~1.4.7"
+    "angular-sanitize": "~1.4.7",
+    "gulp-ng-config": "~1.2.1"
   }
 }
