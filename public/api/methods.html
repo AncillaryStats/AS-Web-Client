@@ -1,0 +1,379 @@
+<h2>NFL Teams</h2>
+
+<h4>URL</h4>
+<code class="prettyprint">
+GET /api/&#60;sport&#62;/teams
+</code>
+
+<h4>Sport</h4>
+nfl
+
+<h4>Response</h4>
+
+JSON object. Top level API result - is used to discover team IDs, and through those the team rosters containing player IDs
+
+<h4>Example Result</h4>
+<pre class="prettyprint lang-js">
+[
+    {
+        "division": "1-0, 1st in AFC North",
+        "id": 1,
+        "name": "Cincinnati Bengals"
+    },
+    {
+        "division": "0-1, 2nd in AFC North",
+        "id": 2,
+        "name": "Baltimore Ravens"
+    },
+    {
+        "division": "0-1, 2nd in NFC North",
+        "id": 3,
+        "name": "Minnesota Vikings"
+    },
+    {
+        "division": "1-0, 1st in NFC North",
+        "id": 4,
+        "name": "Green Bay Packers"
+    },
+    {
+        "division": "0-1, 2nd in NFC North",
+        "id": 5,
+        "name": "Detroit Lions"
+    },
+    {
+        "division": "0-1, 2nd in NFC North",
+        "id": 6,
+        "name": "Chicago Bears"
+    },
+    {
+        "division": "1-0, 1st in AFC West",
+        "id": 7,
+        "name": "San Diego Chargers"
+    },
+    {
+        "division": "0-1, 4th in AFC West",
+        "id": 8,
+        "name": "Oakland Raiders"
+    },
+    {
+        "division": "1-0, 1st in AFC West",
+        "id": 9,
+        "name": "Kansas City Chiefs"
+    },
+    {
+        "division": "1-0, 1st in AFC West",
+        "id": 10,
+        "name": "Denver Broncos"
+    },
+    {
+        "division": "1-0, 1st in NFC West",
+        "id": 11,
+        "name": "St. Louis Rams"
+    },
+    {
+        "division": "0-1, 4th in NFC West",
+        "id": 12,
+        "name": "Seattle Seahawks"
+    },
+    {
+        "division": "1-0, 1st in NFC West",
+        "id": 13,
+        "name": "San Francisco 49ers"
+    },
+    {
+        "division": "1-0, 1st in NFC West",
+        "id": 14,
+        "name": "Arizona Cardinals"
+    },
+    {
+        "division": "1-0, 1st in AFC East",
+        "id": 15,
+        "name": "New York Jets"
+    },
+    {
+        "division": "1-0, 1st in AFC East",
+        "id": 16,
+        "name": "New England Patriots"
+    },
+    {
+        "division": "1-0, 1st in AFC South",
+        "id": 17,
+        "name": "Tennessee Titans"
+    },
+    {
+        "division": "0-1, 2nd in AFC South",
+        "id": 18,
+        "name": "Jacksonville Jaguars"
+    },
+    {
+        "division": "0-1, 2nd in AFC South",
+        "id": 19,
+        "name": "Indianapolis Colts"
+    },
+    {
+        "division": "0-1, 2nd in AFC South",
+        "id": 20,
+        "name": "Houston Texans"
+    },
+    {
+        "division": "0-1, 3rd in NFC South",
+        "id": 21,
+        "name": "Tampa Bay Buccaneers"
+    },
+    {
+        "division": "0-1, 3rd in NFC South",
+        "id": 22,
+        "name": "New Orleans Saints"
+    },
+    {
+        "division": "1-0, 1st in NFC South",
+        "id": 23,
+        "name": "Carolina Panthers"
+    },
+    {
+        "division": "1-0, 1st in NFC South",
+        "id": 24,
+        "name": "Atlanta Falcons"
+    },
+    {
+        "division": "0-1, 2nd in AFC North",
+        "id": 25,
+        "name": "Pittsburgh Steelers"
+    },
+    {
+        "division": "0-1, 2nd in AFC North",
+        "id": 26,
+        "name": "Cleveland Browns"
+    },
+    {
+        "division": "1-0, 1st in AFC East",
+        "id": 27,
+        "name": "Miami Dolphins"
+    },
+    {
+        "division": "1-0, 1st in AFC East",
+        "id": 28,
+        "name": "Buffalo Bills"
+    },
+    {
+        "division": "0-1, 2nd in NFC East",
+        "id": 29,
+        "name": "Washington Redskins"
+    },
+    {
+        "division": "0-1, 2nd in NFC East",
+        "id": 30,
+        "name": "Philadelphia Eagles"
+    },
+    {
+        "division": "0-1, 2nd in NFC East",
+        "id": 31,
+        "name": "New York Giants"
+    },
+    {
+        "division": "1-0, 1st in NFC East",
+        "id": 32,
+        "name": "Dallas Cowboys"
+    }
+]
+</pre>
+
+<hr>
+
+<h2>NFL Roster</h2>
+
+<h4>URL</h4>
+<code class="prettyprint">
+GET /api/&#60;sport&#62;/team/&#60;team_id&#62;
+</code>
+
+<h4>Sport</h4>
+nfl
+
+<h4>Team ID</h4>
+The Team ID for and NFL team can be discovered through the teams object.
+
+<h4>Response</h4>
+
+JSON object - contains all active quarterbacks, halfbacks, wide receivers, and tight ends
+
+<h4>Example Result</h4>
+<pre class="prettyprint lang-js">
+[
+    {
+        "id": 274,
+        "name": "Donald Brown",
+        "number": "#34",
+        "position": "RB",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 416,
+        "name": "Kellen Clemens",
+        "number": "#10",
+        "position": "QB",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 420,
+        "name": "John Phillips",
+        "number": "#83",
+        "position": "TE",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 424,
+        "name": "Malcom Floyd",
+        "number": "#80",
+        "position": "WR",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 413,
+        "name": "Danny Woodhead",
+        "number": "#39",
+        "position": "RB",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 417,
+        "name": "Philip Rivers",
+        "number": "#17",
+        "position": "QB",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 421,
+        "name": "Keenan Allen",
+        "number": "#13",
+        "position": "WR",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 425,
+        "name": "Ladarius Green",
+        "number": "#89",
+        "position": "TE",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 414,
+        "name": "Melvin Gordon",
+        "number": "#28",
+        "position": "RB",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 418,
+        "name": "Dontrelle Inman",
+        "number": "#15",
+        "position": "WR",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 422,
+        "name": "Antonio Gates",
+        "number": "#85",
+        "position": "TE",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 415,
+        "name": "Branden Oliver",
+        "number": "#43",
+        "position": "RB",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 419,
+        "name": "Jacoby Jones",
+        "number": "#12",
+        "position": "WR",
+        "team": "San Diego Chargers"
+    },
+    {
+        "id": 423,
+        "name": "Stevie Johnson",
+        "number": "#11",
+        "position": "WR",
+        "team": "San Diego Chargers"
+    }
+]
+</pre>
+
+
+<hr>
+
+
+<h2>NFL Player</h2>
+
+<h4>URL</h4>
+<code class="prettyprint">
+GET /&#60;sport&#62;/player/&#60;player_id&#62;
+</code>
+
+<h4>Sport</h4>
+nfl
+
+<h4>Player ID</h4>
+The Team ID for NFL teams can be discovered through the NFL teams method
+
+<h4>Response</h4>
+
+JSON object - contains player information, individual game stats, season totals for the player's 2015 NFL season
+
+<h4>Example Result</h4>
+<pre class="prettyprint lang-js">
+{
+    "games": [
+        {
+            "avg_yards_per_rec": 10.9,
+            "avg_yards_per_rush": 0.0,
+            "date": "09/13/2015",
+            "fumbles": 0,
+            "fumbles_lost": 0,
+            "id": 19,
+            "is_season_totals": false,
+            "longest_rec": 17,
+            "longest_rush": 0,
+            "opponent": "KC",
+            "player_name": "DeAndre Hopkins",
+            "rec_tds": 2,
+            "rec_yards": 98,
+            "receptions": 9,
+            "result": "20-27",
+            "rush_attempts": 0,
+            "rush_tds": 0,
+            "rush_yards": 0,
+            "targets": 13
+        },
+        {
+            "avg_yards_per_rec": 10.9,
+            "avg_yards_per_rush": 0.0,
+            "fumbles": 0,
+            "fumbles_lost": 0,
+            "id": 20,
+            "is_season_totals": true,
+            "longest_rec": 17,
+            "longest_rush": 0,
+            "opponent": null,
+            "player_name": "DeAndre Hopkins",
+            "rec_tds": 2,
+            "rec_yards": 98,
+            "receptions": 9,
+            "result": null,
+            "rush_attempts": 0,
+            "rush_tds": 0,
+            "rush_yards": 0,
+            "targets": 13
+        }
+    ],
+    "info": {
+        "id": 23,
+        "name": "DeAndre Hopkins",
+        "number": "#10",
+        "position": "WR",
+        "team": "Houston Texans"
+    }
+}
+</pre>
