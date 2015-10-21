@@ -14,8 +14,8 @@
 <body>
 
   <!-- Navbar container -->
-  <nav class="navbar navbar-inverse navbar-embossed" role="navigation" ng-controller="NavCtrl">
     <div class="container">
+  <nav class="navbar navbar-inverse navbar-embossed" role="navigation" ng-controller="NavCtrl">
       <!-- Home Link -->
       <div class="navbar-header">
       <a class="navbar-brand" href="#/">Ancillary Stats</a>
@@ -24,6 +24,16 @@
       <ul class="nav navbar-nav">
         <li><a href="#/leader-tables">Season Leaders</a></li>
         <li><a href="#/players-graph">Compare Players</a></li>
+        <!-- <li><a href="#/api">API</a></li> -->
+        <li uib-dropdown on-toggle="toggled(open)">
+          <a href id="simple-dropdown" uib-dropdown-toggle>
+            API
+          </a>
+          <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
+              <li role="menuitem"><a href="#/api/methods">Methods</a></li>
+              <li role="menuitem"><a href="#/api/objects">Objects</a></li>
+          </ul>
+        </li>
       </ul>
 
       <div class="col-md-offset-4 col-md-3">
@@ -36,8 +46,8 @@
 
 
       <div></div>
-    </div>
   </nav>
+    </div>
 
   <!-- Main content container -->
   <div class="container">
@@ -50,7 +60,9 @@
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-  
+
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   <!-- // <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> -->
   <!-- // <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script> -->
   <!-- // <script src="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.min.js"></script> -->
@@ -71,6 +83,10 @@
   <script src="nav-ctrl.js"></script>
   <script src="home/home-ctrl.js"></script>
   <script src="home/services/trending.js"></script>
+  <script src="api/api-ctrl.js"></script>
+
+
+  <script src="config-file.js"></script>
 
 
 </body>

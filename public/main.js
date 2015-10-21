@@ -6,7 +6,8 @@
     'ui.router',
     'ui.bootstrap',
     'ngTagsInput',
-    'ngSanitize'
+    'ngSanitize',
+    'SportsStats.config'
     ])
 
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -47,7 +48,24 @@
         templateUrl: 'player/player.html',
         controller: 'PlayerCtrl as player'
     })
+    // .state('api', {
+    //   url: '/api',
+    //     templateUrl: 'api/api.html',
+    //     controller: 'ApiCtrl as api'
+    // })
+    .state('methods', {
+      url: '/api/methods',
+        templateUrl: 'api/methods.html',
+        controller: 'MethodsCtrl as methods'
+    })
+    .state('objects', {
+      url: '/api/objects',
+        templateUrl: 'api/objects.html',
+        controller: 'ObjectsCtrl as objects'
+    })
   }])
+
+  .run
 
 
 })();
