@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default navbar-embossed" role="navigation" style="margin-top: -1.5em">
+  <div class="container">
+
+    <ul class="nav navbar-nav">
+      <li><a href="#/api">Getting Started</a></li>
+      <li><a href="#/leader-tables">Methods</a></li>
+      <li><a href="#/players-graph">Objects</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<h1>Resources</h1>
+<h2>NFL Player</h2>
+
+<h4>URL</h4>
+<code class="prettyprint">
+GET /&#60;sport&#62;/player/&#60;player_id&#62;
+</code>
+
+<h4>Sport</h4>
+nfl
+
+<h4>Player ID</h4>
+The Player ID for NFL players can be discovered through the teams object
+
+<h4>Response</h4>
+
+
+<h4>Example Result</h4>
+<pre class="prettyprint lang-js">
+{  
+  "avg_yards_per_rec": 18.8,  
+  "avg_yards_per_rush": 0.0,  
+  "date": "09/10/2015",  
+  "fumbles": 0,  
+  "fumbles_lost": 0,  
+  "id": 150,  
+  "is_season_totals": false,  
+  "longest_rec": 52,  
+  "longest_rush": 0,  
+  "opponent": "PIT",  
+  "player_name": "Rob Gronkowski",  
+  "rec_tds": 3,  
+  "rec_yards": 94,  
+  "receptions": 5,  
+  "result": "28-21",  
+  "rush_attempts": 0,  
+  "rush_tds": 0,  
+  "rush_yards": 0,  
+  "targets": 8  
+}
+</pre>
