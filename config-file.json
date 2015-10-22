@@ -1,12 +1,17 @@
 {
   "local": {
     "EnvConfig": {
-      "api": "http://localhost:5000/api"
+      "api": "http://localhost:5000/api/nfl"
+    }
+  },
+  "stage": {
+    "EnvConfig": {
+      "api": "http://sports-stats-stage.herokuapp.com/api/nfl"
     }
   },
   "production": {
     "EnvConfig": {
-      "api": "'http://sports-stats-pro.herokuapp.com/"
+      "api": "http://sports-stats-pro.herokuapp.com/api/nfl"
     }
   }
 }

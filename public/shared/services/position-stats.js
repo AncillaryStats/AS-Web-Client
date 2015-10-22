@@ -47,8 +47,8 @@
       if (instance.RB.length) {
         def.resolve()
       } else {
-        $http.get('http://sports-stats-pro.herokuapp.com/games/rbs')
-        // $http.get(EnvConfig.api + '/games/rbs')
+        // $http.get('http://sports-stats-pro.herokuapp.com/games/rbs')
+        $http.get(EnvConfig.api + '/games/rbs')
         .then(function(res) {
           instance.RB = res.data;
           def.resolve();

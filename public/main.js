@@ -56,12 +56,12 @@
     .state('methods', {
       url: '/api/methods',
         templateUrl: 'api/methods.html',
-        controller: 'MethodsCtrl as methods'
+        // controller: 'MethodsCtrl as methods'
     })
     .state('objects', {
       url: '/api/objects',
         templateUrl: 'api/objects.html',
-        controller: 'ObjectsCtrl as objects'
+        // controller: 'ObjectsCtrl as objects'
     })
   }])
 

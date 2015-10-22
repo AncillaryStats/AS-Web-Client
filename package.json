@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "gulp prod && ./node_modules/bower/bin/bower install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bower": "^1.5.3",
     "express": "^4.13.3",
+    "gulp": "^3.9.0",
     "gulp-ng-config": "^1.2.1",
     "newrelic": "^1.22.2"
   },

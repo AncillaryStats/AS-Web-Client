@@ -4,9 +4,9 @@
     .module('SportsStats')
     .factory('Trending', Trending);
 
-  Trending.$inject = ['$http', '$q'];
+  Trending.$inject = ['$http', '$q', 'EnvConfig'];
 
-  function Trending($http, $q){
+  function Trending($http, $q, EnvConfig){
 
     var instance = {
       players: [],
@@ -21,7 +21,7 @@
       if (instance.players.length) {
         def.resolve()
       } else {
-        $http.get('http://sports-stats-pro.herokuapp.com/trending')
+        $http.get(EnvConfig.api + '/trending')
         .then(function(res) {
           instance.players = _.first(res.data, 15);
           def.resolve();
