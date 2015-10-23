@@ -1,0 +1,23 @@
+<h2>Overview</h2>
+
+<p><code class="prettyprint">www.ancillaryapi.com</code>is the base url for the AncillaryStats API</p>
+
+<p>All method calls should be GET requests to a specific endpoint. The API returns JSON in one of two formats:</p>
+
+
+<h4>Successful response:</h4>
+<pre class="prettyprint lang-js">
+{
+  "status": "ok",
+  "result": &#60;the method result&#62;
+}
+</pre>
+
+<h4>Error response:</h4>
+<pre class="prettyprint lang-js">
+{
+  "status": "error",
+  "message": "&#60;an error message&#62;",
+}
+</pre>
+

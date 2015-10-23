@@ -58,9 +58,9 @@
         templateUrl: 'api/methods.html',
         // controller: 'MethodsCtrl as methods'
     })
-    .state('objects', {
-      url: '/api/objects',
-        templateUrl: 'api/objects.html',
+    .state('overview', {
+      url: '/api/overview',
+        templateUrl: 'api/overview.html',
         // controller: 'ObjectsCtrl as objects'
     })
   }])
