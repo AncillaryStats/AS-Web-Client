@@ -15,17 +15,15 @@
 
     return instance;
 
-    // If players do not exist, retrieve
-    // Resolve
+    // If players have not been retrieved yet, GET and resolve
     function get() {
       var def = $q.defer()
       if (instance.players.length) {
         def.resolve();
       } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/players')
         $http.get(EnvConfig.api + '/players')
         .then(function(res) {
-          instance.players = res.data;
+          instance.players = res.data.result;
           def.resolve();
         }, function(err) {
           def.reject(err)

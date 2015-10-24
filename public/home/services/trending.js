@@ -23,8 +23,13 @@
       } else {
         $http.get(EnvConfig.api + '/trending')
         .then(function(res) {
-          instance.players = _.first(res.data, 15);
-          def.resolve();
+          if (res.data) {
+            instance.players = _.first(res.data.result, 15);
+            def.resolve();
+          } else {
+            def.reject()
+          }
+          
         }, function(err) {
           def.reject(err);
         });
