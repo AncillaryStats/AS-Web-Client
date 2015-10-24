@@ -21,18 +21,25 @@
       TE: []
     };
 
+    var posMap = {
+        'QB': 'qbs',
+        'RB': 'rbs',
+        'WR': 'wrs',
+        'TE': 'tes'
+    }
+
     return instance;
 
-    // Ensures position's games exist
-    function getQbGames() {
+    function posWrapper(pos) {
       var def = $q.defer();
-      if (instance.QB.length) {
+      if (instance[pos].length) {
         def.resolve()
       } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/games/qbs')
-        $http.get(EnvConfig.api + '/games/qbs')
+        var endpoint = EnvConfig.api + '/games/' + posMap[pos]
+        $http.get(endpoint)
         .then(function(res) {
-          instance.QB = res.data;
+          console.log(res.data)
+          instance[pos] = res.data.result;
           def.resolve();
         }, function(err) {
           def.reject(err);
@@ -41,58 +48,20 @@
       return def.promise;
     }
 
-    // Ensures position's games exist
+    function getQbGames() {
+      return posWrapper('QB')
+    }
+
     function getRbGames() {
-      var def = $q.defer();
-      if (instance.RB.length) {
-        def.resolve()
-      } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/games/rbs')
-        $http.get(EnvConfig.api + '/games/rbs')
-        .then(function(res) {
-          instance.RB = res.data;
-          def.resolve();
-        }, function(err) {
-          def.reject(err);
-        })
-      }
-      return def.promise;
+      return posWrapper('RB')
     }
 
-    // Ensures position's games exist
     function getWrGames() {
-      var def = $q.defer();
-      if (instance.WR.length) {
-        def.resolve()
-      } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/games/wrs')
-        $http.get(EnvConfig.api + '/games/wrs')
-        .then(function(res) {
-          instance.WR = res.data;
-          def.resolve();
-        }, function(err) {
-          def.reject(err);
-        })
-      }
-      return def.promise;
+      return posWrapper('WR')
     }
 
-    // Ensures position's games exist
     function getTeGames() {
-      var def = $q.defer();
-      if (instance.TE.length) {
-        def.resolve();
-      } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/games/tes')
-        $http.get(EnvConfig.api + '/games/tes')
-        .then(function(res) {
-          instance.TE = res.data;
-          def.resolve();
-        }, function(err) {
-          def.reject(err);
-        })
-      }
-      return def.promise;
+      return posWrapper('TE')
     }
 
     function getAllGames() {
