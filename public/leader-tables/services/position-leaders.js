@@ -105,11 +105,9 @@
       if (instance.rankings.qbPassingTds.stats.length && instance.rankings.qbPassingYards.stats.length && instance.rankings.qbr.stats.length) {
         def.resolve()
       } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/totals/qbs')
         $http.get(EnvConfig.api + '/totals/qbs')
         .then(function(res) {
-          console.log(res)
-          var qbStats = res.data;
+          var qbStats = res.data.result;
           instance.rankings.qbPassingTds.stats = getTopXInCatYForPosZ(10, 'pass_tds', qbStats);
           instance.rankings.qbPassingYards.stats = getTopXInCatYForPosZ(10, 'pass_yards', qbStats);
           instance.rankings.qbr.stats = getTopXInCatYForPosZ(10, 'qb_rating', qbStats)
@@ -129,11 +127,9 @@
       if (instance.rankings.rbRushingTds.stats.length && instance.rankings.rbRushingYards.stats.length && instance.rankings.rbRushes.stats.length) {
         def.resolve()
       } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/totals/rbs')
         $http.get(EnvConfig.api + '/totals/rbs')
         .then(function(res) {
-          var rbStats = res.data;
-
+          var rbStats = res.data.result;
           instance.rankings.rbRushingTds.stats = getTopXInCatYForPosZ(10, 'rush_tds', rbStats);
           instance.rankings.rbRushingYards.stats = getTopXInCatYForPosZ(10, 'rush_yards', rbStats);
           instance.rankings.rbRushes.stats = getTopXInCatYForPosZ(10, 'rush_attempts', rbStats)
@@ -153,10 +149,9 @@
       if (instance.rankings.wrReceivingTds.stats.length && instance.rankings.wrReceivingYards.stats.length && instance.rankings.wrReceptions.stats.length) {
         def.resolve()
       } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/totals/wrs')
         $http.get(EnvConfig.api + '/totals/wrs')
         .then(function(res) {
-          var wrStats = res.data;
+          var wrStats = res.data.result;
           instance.rankings.wrReceivingTds.stats = getTopXInCatYForPosZ(10, 'rec_tds', wrStats);
           instance.rankings.wrReceivingYards.stats = getTopXInCatYForPosZ(10, 'rec_yards', wrStats);
           instance.rankings.wrReceptions.stats = getTopXInCatYForPosZ(10, 'receptions', wrStats)
@@ -175,10 +170,9 @@
       if (instance.rankings.teReceivingTds.stats.length && instance.rankings.teReceivingYards.stats.length && instance.rankings.teReceptions.stats.length) {
         def.resolve()
       } else {
-        // $http.get('http://sports-stats-pro.herokuapp.com/totals/tes')
         $http.get(EnvConfig.api + '/totals/tes')
         .then(function(res) {
-          var teStats = res.data;
+          var teStats = res.data.result;
           instance.rankings.teReceivingTds.stats = getTopXInCatYForPosZ(10, 'rec_tds', teStats);
           instance.rankings.teReceivingYards.stats = getTopXInCatYForPosZ(10, 'rec_yards', teStats);
           instance.rankings.teReceptions.stats = getTopXInCatYForPosZ(10, 'receptions', teStats)
