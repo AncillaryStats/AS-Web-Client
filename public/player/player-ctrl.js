@@ -50,7 +50,6 @@
     }
 
     // Create html table that fits either RB stats
-    
     function createQbTable(playerGames) {
       var table = '<table id="player-table" class="table table-hover">' + qbHeaders;
       playerGames.forEach(function(game) {

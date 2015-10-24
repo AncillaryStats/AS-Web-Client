@@ -12,7 +12,6 @@
 
     Trending.getPlayers()
     .then(function() {
-      console.dir(Trending.players);
       $scope.trending = Trending.players;
     })
     .catch(function(err) {
