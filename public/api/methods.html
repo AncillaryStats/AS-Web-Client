@@ -14,7 +14,9 @@ JSON object. Top level API result - is used to discover team IDs, and through th
 
 <h4>Example Result</h4>
 <pre class="prettyprint lang-js">
-[
+{
+  "status": 200,
+  "result": [
     {
         "division": "1-0, 1st in AFC North",
         "id": 1,
@@ -30,9 +32,11 @@ JSON object. Top level API result - is used to discover team IDs, and through th
         "id": 3,
         "name": "Minnesota Vikings"
     },
-    
+
     ...
-]
+  ]
+}
+
 </pre>
 
 <hr>
@@ -56,7 +60,9 @@ JSON object - contains all active quarterbacks, halfbacks, wide receivers, and t
 
 <h4>Example Result</h4>
 <pre class="prettyprint lang-js">
-[
+{
+  "status": 200,
+  "result": [
     {
         "id": 274,
         "name": "Donald Brown",
@@ -155,7 +161,10 @@ JSON object - contains all active quarterbacks, halfbacks, wide receivers, and t
         "position": "WR",
         "team": "San Diego Chargers"
     }
-]
+  ]
+}
+
+
 </pre>
 
 
@@ -182,6 +191,8 @@ JSON object - contains player information, individual game stats, season totals 
 <h4>Example Result</h4>
 <pre class="prettyprint lang-js">
 {
+  "status": 200,
+  "result": {
     "games": [
         {
             "avg_yards_per_rec": 10.9,
@@ -232,5 +243,7 @@ JSON object - contains player information, individual game stats, season totals 
         "position": "WR",
         "team": "Houston Texans"
     }
+  }
 }
+
 </pre>
